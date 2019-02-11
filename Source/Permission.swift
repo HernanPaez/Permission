@@ -376,7 +376,10 @@ open class Permission: NSObject {
 extension Permission {
     /// The textual representation of self.
     override open var description: String {
-        return type.description
+        if let typ = type {
+            return typ.description
+        }
+        return ""
     }
     
     /// A textual representation of this instance, suitable for debugging.
